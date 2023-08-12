@@ -13,11 +13,6 @@ let firstTime = true;
 
 const toggleHoverEffect = iconElement => {
     iconElement.classList.toggle("iconHover");
-    if (iconElement.classList.contains("cursor-default")) {
-        iconElement.classList.replace("cursor-default", "cursor-pointer");
-    } else {
-        iconElement.classList.replace("cursor-pointer", "cursor-default");
-    }
 };
 
 const addListenerIcons = () => {
@@ -55,15 +50,15 @@ const nextElementMove = (eventBtn = false, nextActiveNumber = undefined) => {
     activeCarouselElementClass.remove("back-card-shuffle");
     activeCarouselElementClass.add("front-card-shuffle");
     iconList[activeCarouselNumber].classList.add("bg-blue-600");
-    progressBar.classList.remove("progress-bar-short");
+    progressBar.classList.remove("progress-bar");
     setTimeout(() => {
-        progressBar.classList.add("progress-bar-short");
+        progressBar.classList.add("progress-bar");
         addListenerIcons();
     }, 2000);
 };
 
 const startCarousel = () => {
-    progressBar.animate(progressBarFill,progressTiming);
+    progressBar.classList.add("progress-bar");
     document.getElementById("iconList").classList.remove("invisible");
     document.getElementById("iconList").classList.remove("opacity-0");
     for (const child of carousel) {
@@ -73,7 +68,6 @@ const startCarousel = () => {
         }
         child.classList.add("opacity-none");
     }
-    carouselIntervel = setInterval(nextElementMove, 7000);
 };
 
 const iconHandler = event => {
@@ -82,15 +76,16 @@ const iconHandler = event => {
         if (
             icon === event.currentTarget &&
             indexOfIcon != activeCarouselNumber
-        ) {
-            nextElementMove(true, indexOfIcon);
-            clearInterval(carouselIntervel);
-            carouselIntervel = setInterval(nextElementMove, 7000);
-            break;
-        }
-        indexOfIcon++;
+            ) {
+                nextElementMove(true, indexOfIcon);
+                clearInterval(carouselIntervel);
+                carouselIntervel = setInterval(nextElementMove, 7000);
+                break;
+            }
+            indexOfIcon++;
     }
 };
 
 addListenerIcons();
-setTimeout(startCarousel, 1500);
+carouselIntervel = setInterval(nextElementMove, 7000);
+setTimeout(startCarousel, 2000);

@@ -2,7 +2,7 @@ body {
     background-color: hsl(0, 0%, 8%);
 }
 
-.first-section {
+.carousel-section {
     background-color: hsl(0, 0%, 8%);
     background-image: url("img/stacked-peaks-haikei-light-dark.svg");
     background-repeat: no-repeat;
@@ -15,6 +15,10 @@ input {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
+h1 {
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.35);
+}
+
 .custom-box-shadow {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
@@ -23,10 +27,43 @@ input {
 section nav {
     border-radius: 80px;
 }
+.move-up {
+    transform: translateY(-100%);
+}
+.move-down {
+    transform: translateY(100%);
+}
+
+.bg-dark-1 {
+    background-color: hsl(0, 0%, 10%);
+}
+
+.bg-dark-2{
+    background-color: hsl(0, 0%, 12%);
+}
+.bg-dark-3 {
+    background-color: hsl(0, 0%, 14%);
+}
+.bg-dark-4 {
+    background-color: hsl(0, 0%, 16%); 
+}
+
+.before-scroll-section {
+    height: 30vh;
+}
+.scroll-section {
+    height: 420vh;
+}
+
+@media (min-width: 1024px) {
+    .scroll-section {
+        height: 420vh;
+    }
+}
 
 /* animations -------------------------------------------------------- */
 
-.progress-bar-short {
+.progress-bar {
     animation: progress-bar 5s;
 }
 
@@ -42,6 +79,9 @@ section nav {
 }
 
 @media (hover: hover) {
+    .iconHover {
+        cursor: pointer;
+    }
     .iconHover:hover {
         background-color: #52525B;
     }

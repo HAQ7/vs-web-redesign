@@ -5,12 +5,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="output.css" />
         <link rel="stylesheet" href="style.css" />
-        <script src="carousel.js" defer></script>
+        <script src="./scripts/carousel.js" defer></script>
+        <script src="./scripts/scroll.js" defer></script>
         <title>Visual Studio Code</title>
     </head>
     <body class="font-">
-        <section class="first-section text-white min-h-screen">
-            <header class="relative flex justify-between items-center">
+        <section class="carousel-section text-white min-h-screen">
+            <header class="relative flex justify-between items-center z-20">
                 <img
                     class="w-10 sm:w-16 m-4 drop-shadow-sm"
                     src="img/vs-code-svgrepo-com.svg"
@@ -83,13 +84,18 @@
                             alt=""
                             class="absolute w-10/12 custom-box-shadow pop-right1"
                         />
-                        <div id="progress-bar" class="absolute -bottom-1 h-1 bg-blue-600"></div>
+                        <div
+                            id="progress-bar"
+                            class="absolute -bottom-1 h-1 bg-blue-600"
+                        ></div>
                     </div>
                     <nav
                         id="iconList"
-                        class="md:w-10/12 w-full flex bg-zinc-800 sm:p-5 p-1 justify-between items-center text-center sm:text-sm text-xs font-medium shadow-lg transition-all invisible opacity-0"
+                        class="md:w-10/12 w-full flex bg-zinc-800 sm:p-5 p-1 justify-between items-center text-center sm:text-sm text-xs font-medium shadow-lg transition-all invisible opacity-0 z-30"
                     >
-                        <div class="grid place-items-center rounded-full p-3 transition-colors cursor-default bg-blue-600"> 
+                        <div
+                            class="grid place-items-center rounded-full p-3 transition-colors cursor-default bg-blue-600"
+                        >
                             <img
                                 class="sm:w-9 w-7 drop-shadow"
                                 src="img/light-bulb-line-drawing-svgrepo-com (1).svg"
@@ -130,7 +136,7 @@
                     </nav>
                 </div>
                 <div
-                    class="grid place-items-center z-10 relative mt-10 lg:mt-0 lg:w-4/12 w-full text-center"
+                    class="grid place-items-center z-20 relative mt-10 lg:mt-0 lg:w-4/12 w-full text-center"
                 >
                     <h1 class="xl:text-6xl text-5xl font-bold">
                         Visual Studio Code
@@ -162,8 +168,128 @@
             </section>
         </section>
         <section
-            class="h-screen"
-            style="background-color: hsl(0, 0%, 8%)"
-        ></section>
+            class="fixed-section flex lg:flex-row flex-col fixed top-0 z-10"
+        >
+            <div
+                class="lg:w-1/4 lg:relative bg-dark-4 move-up w-screen h-screen flex flex-col lg:justify-between justify-center items-center text-white lg:py-32 lg:gap-0 gap-10"
+            >
+                <div>
+                    <h1 class="text-center font-bold text-3xl mt-8">
+                        Meet IntelliSense
+                    </h1>
+                    <h4 class="text-center font-normal text-xl">
+                        Go beyond syntax highlighting and autocomplete with
+                        IntelliSense.
+                    </h4>
+                </div>
+                <img src="img/Hundreds-of-Extensions.png" alt="" />
+            </div>
+            <div
+                class="lg:w-1/4 lg:relative bg-dark-3 move-down w-screen h-screen flex flex-col lg:justify-between justify-center items-center text-white lg:py-32 lg:gap-0 gap-10"
+            >
+                <img src="img/home-debug.svg" alt="" />
+                <div>
+                    <h1 class="text-center font-bold text-3xl">
+                        Meet IntelliSense
+                    </h1>
+                    <h4 class="text-center font-normal text-xl">
+                        Go beyond syntax highlighting and autocomplete with
+                        IntelliSense.
+                    </h4>
+                </div>
+            </div>
+            <div
+                class="lg:w-1/4 lg:relative bg-dark-2 move-up w-screen h-screen flex flex-col lg:justify-between justify-center items-center text-white lg:py-32 lg:gap-0 gap-10"
+            >
+                <div>
+                    <h1 class="text-center font-bold text-3xl">
+                        Meet IntelliSense
+                    </h1>
+                    <h4 class="text-center font-normal text-xl">
+                        Go beyond syntax highlighting and autocomplete with
+                        IntelliSense.
+                    </h4>
+                </div>
+                <img src="img/home-git.svg" alt="" />
+            </div>
+            <div
+                class="lg:w-1/4 lg:relative bg-dark-1 move-down w-screen h-screen flex flex-col lg:justify-between justify-center items-center text-white lg:py-32 lg:gap-0 gap-10"
+            >
+                <img src="img/home-intellisense.svg" alt="" />
+                <div>
+                    <h1 class="text-center font-bold text-3xl">
+                        Meet IntelliSense
+                    </h1>
+                    <h4 class="text-center font-normal text-xl">
+                        Go beyond syntax highlighting and autocomplete with
+                        IntelliSense.
+                    </h4>
+                </div>
+            </div>
+        </section>
+        <section class="before-scroll-section"></section>
+        <section class="scroll-section relative">
+            <section
+                class="after-scroll-section flex lg:flex-row flex-col absolute bottom-0 opacity-0"
+            >
+                <div
+                    class="lg:w-1/4 lg:relative bg-dark-4 w-screen h-screen flex flex-col lg:justify-between justify-center items-center text-white lg:py-32 lg:gap-0 gap-10"
+                >
+                    <div>
+                        <h1 class="text-center font-bold text-3xl mt-8">
+                            Meet IntelliSense
+                        </h1>
+                        <h4 class="text-center font-normal text-xl">
+                            Go beyond syntax highlighting and autocomplete with
+                            IntelliSense.
+                        </h4>
+                    </div>
+                    <img src="img/Hundreds-of-Extensions.png" alt="" />
+                </div>
+                <div
+                    class="lg:w-1/4 lg:relative bg-dark-3 w-screen h-screen flex flex-col lg:justify-between justify-center items-center text-white lg:py-32 lg:gap-0 gap-10"
+                >
+                    <img src="img/home-debug.svg" alt="" />
+                    <div>
+                        <h1 class="text-center font-bold text-3xl">
+                            Meet IntelliSense
+                        </h1>
+                        <h4 class="text-center font-normal text-xl">
+                            Go beyond syntax highlighting and autocomplete with
+                            IntelliSense.
+                        </h4>
+                    </div>
+                </div>
+                <div
+                    class="lg:w-1/4 lg:relative bg-dark-2 w-screen h-screen flex flex-col lg:justify-between justify-center items-center text-white lg:py-32 lg:gap-0 gap-10"
+                >
+                    <div>
+                        <h1 class="text-center font-bold text-3xl">
+                            Meet IntelliSense
+                        </h1>
+                        <h4 class="text-center font-normal text-xl">
+                            Go beyond syntax highlighting and autocomplete with
+                            IntelliSense.
+                        </h4>
+                    </div>
+                    <img src="img/home-git.svg" alt="" />
+                </div>
+                <div
+                    class="lg:w-1/4 lg:relative bg-dark-1 w-screen h-screen flex flex-col lg:justify-between justify-center items-center text-white lg:py-32 lg:gap-0 gap-10"
+                >
+                    <img src="img/home-intellisense.svg" alt="" />
+                    <div>
+                        <h1 class="text-center font-bold text-3xl">
+                            Meet IntelliSense
+                        </h1>
+                        <h4 class="text-center font-normal text-xl">
+                            Go beyond syntax highlighting and autocomplete with
+                            IntelliSense.
+                        </h4>
+                    </div>
+                </div>
+            </section>
+        </section>
+        <section class="scroll-section relative"></section>
     </body>
 </html>
