@@ -1,0 +1,177 @@
+body {
+    background-color: hsl(0, 0%, 8%);
+}
+
+.first-section {
+    background-color: hsl(0, 0%, 8%);
+    background-image: url("img/stacked-peaks-haikei-light-dark.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+button,
+input {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.custom-box-shadow {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+
+section nav {
+    border-radius: 80px;
+}
+
+/* animations -------------------------------------------------------- */
+
+.progress-bar-short {
+    animation: progress-bar 5s;
+}
+
+@keyframes progress-bar {
+    from {
+        width: 0;
+    } to {
+        width: calc((10/12 * 100)*1%);
+    }
+}
+.transition-mid {
+    transition: 0.75s;
+}
+
+@media (hover: hover) {
+    .iconHover:hover {
+        background-color: #52525B;
+    }
+}
+
+.pop-left1 {
+    animation: pop-left2 2s;
+}
+.pop-left2 {
+    animation: pop-left1 2s;
+}
+.z-index-animation {
+    animation: z-index-animation 2s;
+}
+.pop-right1 {
+    animation: pop-right1 2s;
+    
+}
+
+@keyframes pop-left1 {
+    0% {
+        transform: translateX(0);
+        z-index: 40;
+    }
+    30% {
+        transform: translateX(-20%);
+    }
+    50% {
+        transform: translateX(-20%);
+    }
+    90% {
+        transform: translateX(0);
+        z-index: 40;
+    }
+    100% {
+        z-index: 10;
+    }
+}
+
+@keyframes pop-left2 {
+    0% {
+        transform: translateX(0);
+        z-index:30;
+    }
+    30% {
+        transform: translateX(-10%);
+    }
+    50% {
+        transform: translateX(-10%);
+    }
+    90% {
+        transform: translateX(0);
+        z-index: 30;
+    }
+    100% {
+        z-index: 0;
+    }
+}
+@keyframes z-index-animation {
+    0% {
+        z-index: 20;
+    } 90% {
+        z-index:20;
+    }
+}
+@keyframes pop-right1 {
+    0% {
+        transform: translateX(0);
+        z-index: 10;
+    }
+    30% {
+        transform: translateX(10%);
+    }
+    50% {
+        transform: translateX(10%);
+    }
+    90% {
+        transform: translateX(0);
+    }
+}
+
+
+.opacity-none {
+    opacity: 0;
+}
+
+.back-card-shuffle {
+    animation: back-card-shuffle 2s forwards;
+}
+
+@keyframes back-card-shuffle {
+    0% {
+        z-index: 10;
+        opacity: 1;
+    }
+    40% {
+        transform: translateX(-70%);
+    }
+    99% {
+        opacity: 1;
+        transform: translateX(0);
+        z-index: 0;
+    }
+    100% {
+        opacity: 0;
+        z-index: 0;
+    }
+}
+
+.front-card-shuffle {
+    animation: front-card-shuffle 2s forwards;
+}
+
+@keyframes front-card-shuffle {
+    0% {
+        opacity: 1;
+        z-index: 0;
+    }
+    50% {
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+            rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+            rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+        transform: translateX(40%);
+    }
+    99% {
+        transform: translateX(0);
+    }
+    100% {
+        opacity: 1;
+        z-index: 10;
+        box-shadow: none;
+    }
+}
