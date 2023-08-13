@@ -49,15 +49,15 @@ section nav {
 }
 
 .before-scroll-section {
-    height: 30vh;
+    height: 40vh;
 }
 .scroll-section {
-    height: 420vh;
+    height: 400vh;
 }
 
 @media (min-width: 1024px) {
     .scroll-section {
-        height: 420vh;
+        height: 300vh;
     }
 }
 
