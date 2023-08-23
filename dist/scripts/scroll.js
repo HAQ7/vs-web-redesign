@@ -1,8 +1,9 @@
 const scrollSection = document.querySelector(".scroll-section");
-const scrollElements = document.querySelectorAll(".fixed-section>div");
+const scrollElements = document.getElementById("scroll-rectangle").children;
 const screenHeight = document
     .querySelector(".fixed-section")
     .getClientRects()[0].height;
+const homeAzure = document.getElementById("home-azure-div")
 let ticking = false;
 
 function scrollHandler() {
@@ -10,13 +11,6 @@ function scrollHandler() {
         ((screenHeight - scrollSection.getClientRects()[0].top) /
             (screenHeight * 2)) *
         100;
-    document.body.style = `background-color: hsl(0, 0%, ${
-        750 > scrollPercentage && scrollPercentage > 25
-            ? scrollPercentage - 17
-            : scrollPercentage > 100
-            ? 58
-            : 8
-    }%);`;
     scrollElements[3].style = `transform: translate(${
         150 > scrollPercentage && scrollPercentage > 120
             ? (scrollPercentage - 120) * (10 / 3)
@@ -69,6 +63,7 @@ function scrollHandler() {
             ? 0
             : 100
     }%);`;
+    homeAzure.style = `opacity: ${scrollPercentage > 90 ? 1 : 0}`
 }
 
 document.addEventListener("scroll", event => {

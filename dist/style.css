@@ -1,3 +1,6 @@
+:root {
+    --imgWidth: 8/12;
+}
 body {
     background-color: hsl(0, 0%, 8%);
 }
@@ -57,7 +60,7 @@ section nav {
 
 @media (min-width: 1024px) {
     .scroll-section {
-        height: 300vh;
+        height: 350vh;
     }
 }
 
@@ -71,7 +74,13 @@ section nav {
     from {
         width: 0;
     } to {
-        width: calc((10/12 * 100)*1%);
+        width: calc((var(--imgWidth) * 100)*1%);
+    }
+}
+
+@media (min-width: 1024px) {
+    :root {
+        --imgWidth: 10/12;
     }
 }
 .transition-mid {
