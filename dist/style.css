@@ -1,5 +1,6 @@
 :root {
-    --imgWidth: 8/12;
+    --imgWidth: 10/12;
+    --screenWidth: 100vw;
 }
 body {
     background-color: hsl(0, 0%, 8%);
@@ -26,9 +27,29 @@ h1 {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
-
 section nav {
     border-radius: 80px;
+}
+.menuBtn > div {
+    transition: 0.5s;
+    height: 2px;
+}
+.menuBtn > div:first-child {
+    transform: translateY(-10px);
+}
+.menuBtn > div:last-child {
+    transform: translateY(10px);
+}
+.drop-down > div:first-child {
+    rotate: 45deg;
+    transform: translateY(0);
+}
+.drop-down > div:nth-child(2) {
+    opacity: 0;
+}
+.drop-down > div:last-child {
+    rotate: -45deg;
+    transform: translateY(0);
 }
 .move-up {
     transform: translateY(-100%);
@@ -41,74 +62,119 @@ section nav {
     background-color: hsl(0, 0%, 10%);
 }
 
-.bg-dark-2{
+.bg-dark-2 {
     background-color: hsl(0, 0%, 12%);
 }
 .bg-dark-3 {
     background-color: hsl(0, 0%, 14%);
 }
 .bg-dark-4 {
-    background-color: hsl(0, 0%, 16%); 
+    background-color: hsl(0, 0%, 16%);
 }
 
 .before-scroll-section {
     height: 40vh;
 }
+
+@media (max-width: 767px) {
+    .before-scroll-section {
+        height: 10vh;
+    }
+    :root {
+        --imgWidth: 11/12;
+    }
+}
 .scroll-section {
     height: 400vh;
 }
 
-@media (min-width: 1024px) {
-    .scroll-section {
-        height: 350vh;
-    }
+.download-section {
+    background-color: hsl(0, 0%, 17%);
 }
 
-.shapedividers_com-2924{
-    overflow:hidden;
-    position:relative;
-    }
-    .shapedividers_com-2924::before{
-    content:'';
-    font-family:'shape divider from ShapeDividers.com';
-    position: absolute;
-    bottom: -1px;
-    left: -1px;
-    right: -1px;
-    top: -1px;
-    z-index: 3;
-    pointer-events: none;
-    background-repeat: no-repeat; 
-    background-size: 182% 90px;
-    background-position: 40% 0%;    
-    background-image: url('data:image/svg+xml;charset=utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35.28 2.17" preserveAspectRatio="none"><path d="M0 .5c3.07.55 9.27-.42 16.14 0 6.88.4 13.75.57 19.14-.11V0H0z" fill="%23141414"/><path d="M0 1c3.17.8 7.29-.38 10.04-.55 2.75-.17 9.25 1.47 12.67 1.3 3.43-.17 4.65-.84 7.05-.87 2.4-.02 5.52.88 5.52.88V0H0z" opacity=".5" fill="%23141414"/><path d="M0 1.85c2.56-.83 7.68-.3 11.79-.42 4.1-.12 6.86-.61 9.58-.28 2.73.33 5.61 1.17 8.61 1 3-.19 4.73-.82 5.3-.84V.1H0z" opacity=".5" fill="%23141414"/></svg>'); 
-    }
-    
-    @media (min-width:768px){
-    .shapedividers_com-2924::before{
-    background-size: 182% 90px;
-    background-position: 40% 0%;   
-    }  
-    }
-     
-    @media (min-width:1025px){
-    .shapedividers_com-2924::before{ 
-    bottom: -0.1vw;
-    left: -0.1vw;
-    right: -0.1vw;
-    top: -0.1vw; 
-    background-size: 182% 90px;
-    background-position: 40% 0%;  
-    }
-    }
-    @media (min-width:2100px){
-    .shapedividers_com-2924::before{
-    background-size: 182% calc(2vw + 90px);
-    }
-    }
-     
+.download-section-wrap {
+    transform: translateY(100%);
+}
 
+.menu {
+    transform: translate(100%);
+    transition: 0.5s;
+}
+
+.menuDrop {
+    transform: translate(0);
+}
+
+.moving-background {
+    --s: 84px; /* control the size*/
+    --c1: hsl(0, 0%, 12%);
+    --c2: hsl(0, 0%, 10%);
+    --c3: hsl(0, 0%, 8%);
+
+    --_g: 0 120deg, #0000 0;
+    background: conic-gradient(
+            from 0deg at calc(500% / 6) calc(100% / 3),
+            var(--c3) var(--_g)
+        ),
+        conic-gradient(
+            from -120deg at calc(100% / 6) calc(100% / 3),
+            var(--c2) var(--_g)
+        ),
+        conic-gradient(
+            from 120deg at calc(100% / 3) calc(500% / 6),
+            var(--c1) var(--_g)
+        ),
+        conic-gradient(
+            from 120deg at calc(200% / 3) calc(500% / 6),
+            var(--c1) var(--_g)
+        ),
+        conic-gradient(
+            from -180deg at calc(100% / 3) 50%,
+            var(--c2) 60deg,
+            var(--c1) var(--_g)
+        ),
+        conic-gradient(
+            from 60deg at calc(200% / 3) 50%,
+            var(--c1) 60deg,
+            var(--c3) var(--_g)
+        ),
+        conic-gradient(
+            from -60deg at 50% calc(100% / 3),
+            var(--c1) 120deg,
+            var(--c2) 0 240deg,
+            var(--c3) 0
+        );
+    background-size: calc(var(--s) * 1.732) var(--s);
+    animation: 50s infinite background-move linear;
+}
+
+.custom-shape-divider-bottom-1692806008 {
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1692806008 svg {
+    position: relative;
+    display: block;
+    width: calc(200% + 1.3px);
+    height: 150px;
+}
+
+.custom-shape-divider-bottom-1692806008 .shape-fill {
+    fill: hsl(0, 0%, 17%);
+}
 /* animations -------------------------------------------------------- */
+
+@keyframes background-move {
+    from {
+        background-position: 0;
+    }
+    to {
+        background-position: var(--screenWidth) var(--screenWidth);
+    }
+}
 
 .progress-bar {
     animation: progress-bar 5s;
@@ -117,8 +183,9 @@ section nav {
 @keyframes progress-bar {
     from {
         width: 0;
-    } to {
-        width: calc((var(--imgWidth) * 100)*1%);
+    }
+    to {
+        width: calc((var(--imgWidth) * 100) * 1%);
     }
 }
 
@@ -136,7 +203,7 @@ section nav {
         cursor: pointer;
     }
     .iconHover:hover {
-        background-color: #52525B;
+        background-color: #52525b;
     }
 }
 
@@ -151,7 +218,6 @@ section nav {
 }
 .pop-right1 {
     animation: pop-right1 2s;
-    
 }
 
 @keyframes pop-left1 {
@@ -177,7 +243,7 @@ section nav {
 @keyframes pop-left2 {
     0% {
         transform: translateX(0);
-        z-index:30;
+        z-index: 30;
     }
     30% {
         transform: translateX(-10%);
@@ -196,8 +262,9 @@ section nav {
 @keyframes z-index-animation {
     0% {
         z-index: 20;
-    } 90% {
-        z-index:20;
+    }
+    90% {
+        z-index: 20;
     }
 }
 @keyframes pop-right1 {
@@ -215,7 +282,6 @@ section nav {
         transform: translateX(0);
     }
 }
-
 
 .opacity-none {
     opacity: 0;

@@ -76,13 +76,13 @@ const iconHandler = event => {
         if (
             icon === event.currentTarget &&
             indexOfIcon != activeCarouselNumber
-            ) {
-                nextElementMove(true, indexOfIcon);
-                clearInterval(carouselIntervel);
-                carouselIntervel = setInterval(nextElementMove, 7000);
-                break;
-            }
-            indexOfIcon++;
+        ) {
+            nextElementMove(true, indexOfIcon);
+            clearInterval(carouselIntervel);
+            carouselIntervel = setInterval(nextElementMove, 7000);
+            break;
+        }
+        indexOfIcon++;
     }
 };
 

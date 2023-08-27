@@ -7,30 +7,100 @@
         <link rel="stylesheet" href="style.css" />
         <script src="./scripts/carousel.js" defer></script>
         <script src="./scripts/scroll.js" defer></script>
+        <script src="./scripts/menu.js" defer></script>
         <title>Visual Studio Code</title>
     </head>
-    <body class="font-">
-        <section class="carousel-section text-white min-h-screen">
-            <header class="relative flex justify-between items-center z-20">
+    <body class="">
+        <section
+            class="w-screen h-screen bg-black fixed transition-opacity opacity-0"
+        ></section>
+        <div
+            class="h-screen w-64 bg-zinc-800 right-0 fixed z-50 flex flex-col items-center pt-20 gap-10 text-center menu"
+        >
+            <div class="flex justify-start items-center py-2">
                 <img
-                    class="w-10 sm:w-16 m-4 drop-shadow-sm"
+                    class="rotate-90 m-2 w-6 absolute"
+                    src="img/glass.svg"
+                    alt=""
+                />
+                <input
+                    class="text-black outline-none outline-sm:none w-60 h-10 rounded-3xl px-11"
+                    placeholder="Search documents"
+                    type="text"
+                    name=""
+                    id=""
+                />
+            </div>
+            <a
+                href=""
+                class="p-4 text-zinc-300 hover:text-white transition-all text-center w-11/12 border-b"
+                >Docs</a
+            >
+            <a
+                href=""
+                class="p-4 text-zinc-300 hover:text-white transition-all border-b text-center w-11/12"
+                >Updates</a
+            >
+            <a
+                href=""
+                class="p-4 text-zinc-300 hover:text-white transition-all border-b text-center w-11/12"
+                >Blog</a
+            >
+            <a
+                href=""
+                class="p-4 text-zinc-300 hover:text-white transition-all border-b text-center w-11/12"
+                >API</a
+            >
+            <a
+                href=""
+                class="p-4 text-zinc-300 hover:text-white transition-all text-center w-11/12"
+                >Extensions</a
+            >
+        </div>
+        <section class="carousel-section text-white min-h-screen">
+            <header
+                class="relative flex justify-between items-center md:px-5"
+            >
+                <img
+                    class="w-10 md:w-16 m-4 drop-shadow-sm"
                     src="img/vs-code-svgrepo-com.svg"
                     alt=""
                 />
-                <nav class="flex right-0 top-0 m-2 gap-5 p-5">
-                    <button
-                        class="text-c hidden sm:inline-block hover:bg-blue-700 text-lg text-white w-32 h-10 bg-blue-600 rounded-3xl transition-all"
+                <nav class="items-center gap-1 hidden md:flex z-50">
+                    <a
+                        href=""
+                        class="p-4 text-zinc-300 hover:text-white hover:border-b-blue-600 transition-all border-b"
+                        >Docs</a
                     >
-                        Docs
-                    </button>
-                    <div class="flex justify-start items-center">
+                    <a
+                        href=""
+                        class="p-4 text-zinc-300 hover:text-white hover:border-b-blue-600 transition-all border-b"
+                        >Updates</a
+                    >
+                    <a
+                        href=""
+                        class="p-4 text-zinc-300 hover:text-white hover:border-b-blue-600 transition-all border-b"
+                        >Blog</a
+                    >
+                    <a
+                        href=""
+                        class="p-4 text-zinc-300 hover:text-white hover:border-b-blue-600 transition-all border-b"
+                        >API</a
+                    >
+                    <a
+                        href=""
+                        class="p-4 text-zinc-300 hover:text-white hover:border-b-blue-600 transition-all border-b"
+                        >Extensions</a
+                    >
+
+                    <div class="flex justify-start items-center py-2 ms-3">
                         <img
                             class="hidden sm:inline-block rotate-90 m-2 w-6 absolute"
                             src="img/glass.svg"
                             alt=""
                         />
                         <input
-                            class="text-black outline-none hidden sm:inline-block outline-sm:none w-72 h-10 rounded-3xl px-11 pb-0.5"
+                            class="text-black outline-none outline-sm:none w-60 h-10 rounded-3xl px-11"
                             placeholder="Search documents"
                             type="text"
                             name=""
@@ -38,27 +108,20 @@
                         />
                     </div>
                 </nav>
-                <svg
-                    class="sm:hidden w-10 text-white m-4"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke-width="1.5"
-                    stroke="currentColor"
-                    class="w-6 h-6"
+
+                <div
+                    class="md:hidden w-10 h-10 text-white m-4 grid place-items-center fixed right-0 top-0 z-50 menuBtn"
                 >
-                    <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-                    />
-                </svg>
+                    <div class="w-10 bg-white"></div>
+                    <div class="w-10 bg-white absolute"></div>
+                    <div class="w-10 bg-white absolute"></div>
+                </div>
             </header>
             <section
-                class="flex lg:flex-row flex-col justify-around items-center mt-10 overflow-hidden relative"
+                class="flex md:flex-row flex-col justify-around items-center mt-10 overflow-hidden relative"
             >
                 <div
-                    class="flex flex-col justify-center items-center relative max-w-3xl lg:w-6/12 w-full gap-5 translate-x-30"
+                    class="flex flex-col justify-center items-center relative max-w-3xl md:w-7/12 w-full gap-5 translate-x-30"
                 >
                     <div
                         class="grid place-items-center w-full relative"
@@ -67,22 +130,22 @@
                         <img
                             src="img/intll.png"
                             alt=""
-                            class="lg:w-10/12 w-8/12 transition-mid custom-box-shadow z-10 pop-left2"
+                            class="md:w-10/12 w-11/12 transition-mid custom-box-shadow z-10 pop-left2"
                         />
                         <img
                             src="img/git.png"
                             alt=""
-                            class="absolute lg:w-10/12 w-8/12 transition-mid custom-box-shadow pop-left1"
+                            class="absolute md:w-10/12 w-11/12 transition-mid custom-box-shadow pop-left1"
                         />
                         <img
                             src="img/debug.png"
                             alt=""
-                            class="absolute lg:w-10/12 w-8/12 transition-mid custom-box-shadow z-index-animation"
+                            class="absolute md:w-10/12 w-11/12 transition-mid custom-box-shadow z-index-animation"
                         />
                         <img
                             src="img/ext.png"
                             alt=""
-                            class="absolute lg:w-10/12 w-8/12 custom-box-shadow pop-right1"
+                            class="absolute md:w-10/12 w-11/12 custom-box-shadow pop-right1"
                         />
                         <div
                             id="progress-bar"
@@ -91,7 +154,7 @@
                     </div>
                     <nav
                         id="iconList"
-                        class="md:w-10/12 w-full flex bg-zinc-800 sm:p-5 p-1 justify-between items-center text-center sm:text-sm text-xs font-medium shadow-lg transition-all invisible opacity-0 z-30"
+                        class="md:w-10/12 w-full flex bg-zinc-800 sm:p-5 p-1 justify-between items-center text-center sm:text-sm text-xs font-medium shadow-md transition-all invisible opacity-0 z-30"
                     >
                         <div
                             class="grid place-items-center rounded-full p-3 transition-colors cursor-default bg-blue-600"
@@ -136,27 +199,27 @@
                     </nav>
                 </div>
                 <div
-                    class="grid place-items-center z-20 relative mt-10 lg:mt-0 lg:w-4/12 w-full text-center"
+                    class="grid place-items-center z-20 relative mt-10 md:mt-0 md:w-3/12 w-full text-center"
                 >
-                    <h1 class="xl:text-6xl text-5xl font-bold">
+                    <h1 class="xl:text-6xl text-4xl font-bold">
                         Visual Studio Code
                     </h1>
-                    <h4 class="text-lg font-bold">
+                    <h4 class="text-md font-bold">
                         The only code editor you will ever need.
                     </h4>
                     <div class="btn-group flex mt-5">
                         <button
-                            class="flex justify-center items-center font-medium bg-blue-600 hover:bg-blue-700 transition-all text-sm w-40 p-3 rounded-s-3xl"
+                            class="flex justify-center items-center font-medium bg-blue-600 hover:bg-blue-700 transition-all text-sm w-40 p-4 rounded-s-3xl"
                         >
-                            <span class="sm:inline-block hidden"
+                            <span class="md:inline-block hidden"
                                 >Download for Windows</span
                             >
                             <img
-                                class="sm:inline-block hidden w-7"
+                                class="md:inline-block hidden w-7"
                                 src="img/windows-174-svgrepo-com.svg"
                                 alt=""
                             />
-                            <span class="sm:hidden">Use online verison</span>
+                            <span class="md:hidden">Use online verison</span>
                         </button>
                         <button
                             class="flex justify-center items-center font-medium bg-blue-600 hover:bg-blue-700 transition-all border-l border-black rounded-e-3xl"
@@ -170,77 +233,187 @@
         <section class="before-scroll-section"></section>
         <section class="scroll-section relative">
             <section
-                class="fixed-section grid place-items-center lg:fixed top-0 z-10"
+                class="fixed-section grid place-items-center md:fixed top-0 z-10 h-screen w-screen"
             >
-            <div class="flex lg:flex-row flex-col z-20" id="scroll-rectangle">
                 <div
-                    class="lg:w-1/4 relative bg-dark-4 move-down w-screen h-screen flex flex-col lg:justify-between justify-center items-center text-white lg:py-32 lg:gap-0 gap-10"
+                    class="flex md:flex-row flex-col z-20"
+                    id="scroll-rectangle"
                 >
-                    <div>
-                        <h1 class="text-center font-bold text-3xl mt-8">
-                            Meet IntelliSense
-                        </h1>
-                        <h4 class="text-center font-normal text-xl">
-                            Go beyond syntax highlighting and autocomplete with
-                            IntelliSense.
-                        </h4>
+                    <div
+                        class="md:w-1/4 relative bg-dark-4 move-down w-screen h-screen flex flex-col md:justify-between justify-center items-center text-white md:py-32 md:gap-0 gap-10"
+                    >
+                        <div>
+                            <h1 class="text-center font-bold text-3xl">
+                                Print statement debugging is a thing of the past
+                            </h1>
+                            <h4 class="text-center font-normal text-xl">
+                                Debug code right from the editor. debug with
+                                break points, call stacks, and an interactive
+                                console
+                            </h4>
+                        </div>
+                        <img src="img/home-debug.svg" alt="" />
                     </div>
-                    <img src="img/Hundreds-of-Extensions.png" alt="" />
+                    <div
+                        class="md:w-1/4 relative bg-dark-3 move-up w-screen h-screen flex flex-col md:justify-between justify-center items-center text-white md:py-32 md:gap-0 gap-10"
+                    >
+                        <img src="img/home-git.svg" alt="" />
+                        <div>
+                            <h1 class="text-center font-bold text-3xl">
+                                Git commands built-in
+                            </h1>
+                            <h4 class="text-center font-normal text-xl">
+                                Review diffs, stage files, and make commits
+                                right from the editor
+                            </h4>
+                        </div>
+                    </div>
+                    <div
+                        class="md:w-1/4 relative bg-dark-2 move-down w-screen h-screen flex flex-col md:justify-between justify-center items-center text-white md:py-32 md:gap-0 gap-10"
+                    >
+                        <div>
+                            <h1 class="text-center font-bold text-3xl mt-8">
+                                Extensible and customizable
+                            </h1>
+                            <h4 class="text-center font-normal text-xl">
+                                Want even more features? Install extensions to
+                                add new languages, themes, debuggers
+                            </h4>
+                        </div>
+                        <img src="img/Hundreds-of-Extensions.png" alt="" />
+                    </div>
+                    <div
+                        class="md:w-1/4 relative bg-dark-1 move-up w-screen h-screen flex flex-col md:justify-between justify-center items-center text-white md:py-32 md:gap-0 gap-10"
+                    >
+                        <img src="img/home-intellisense.svg" alt="" />
+                        <div>
+                            <h1 class="text-center font-bold text-3xl">
+                                Meet IntelliSense
+                            </h1>
+                            <h4 class="text-center font-normal text-xl">
+                                Go beyond syntax highlighting and autocomplete
+                                with IntelliSense
+                            </h4>
+                        </div>
+                    </div>
                 </div>
                 <div
-                    class="lg:w-1/4 relative bg-dark-3 move-up w-screen h-screen flex flex-col lg:justify-between justify-center items-center text-white lg:py-32 lg:gap-0 gap-10"
+                    class="w-screen h-screen md:absolute relative grid place-items-center moving-section"
                 >
-                    <img src="img/home-debug.svg" alt="" />
-                    <div>
+                    <div
+                        class="w-5/6 md:w-3/6 gap-0 grid place-items-center absolute text-white md:opacity-0 opac"
+                        id="home-azure-div"
+                    >
+                        <img src="img/home-azure.svg" alt="" />
                         <h1 class="text-center font-bold text-3xl">
-                            Meet IntelliSense
+                            Deploy with confidence and ease
                         </h1>
-                        <h4 class="text-center font-normal text-xl">
-                            Go beyond syntax highlighting and autocomplete with
-                            IntelliSense.
+                        <h4 class="text-center font-normal text-xl w-full">
+                            With Microsoft Azure you can deploy and host your
+                            sites, store and query relational and document based
+                            data, and scale with serverless computing, all with
+                            ease, all from within
+                            <span class="font-bold"
+                                >VS Code<img
+                                    class="w-10 ms-1 drop-shadow-sm inline"
+                                    src="img/vs-code-svgrepo-com.svg"
+                                    alt=""
+                            /></span>
                         </h4>
                     </div>
                 </div>
                 <div
-                    class="lg:w-1/4 relative bg-dark-2 move-down w-screen h-screen flex flex-col lg:justify-between justify-center items-center text-white lg:py-32 lg:gap-0 gap-10"
+                    class="w-screen absolute bottom-0 download-section-wrap text-white z-40 md:grid hidden p-0"
                 >
-                    <div>
-                        <h1 class="text-center font-bold text-3xl">
-                            Meet IntelliSense
-                        </h1>
-                        <h4 class="text-center font-normal text-xl">
-                            Go beyond syntax highlighting and autocomplete with
-                            IntelliSense.
-                        </h4>
+                    <div class="custom-shape-divider-bottom-1692806008 h-40">
+                        <svg
+                            data-name="Layer 1"
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 1200 120"
+                            preserveAspectRatio="none"
+                        >
+                            <path
+                                d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z"
+                                opacity=".25"
+                                class="shape-fill"
+                            ></path>
+                            <path
+                                d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z"
+                                opacity=".5"
+                                class="shape-fill"
+                            ></path>
+                            <path
+                                d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z"
+                                class="shape-fill"
+                            ></path>
+                        </svg>
                     </div>
-                    <img src="img/home-git.svg" alt="" />
-                </div>
-                <div
-                    class="lg:w-1/4 relative bg-dark-1 move-up w-screen h-screen flex flex-col lg:justify-between justify-center items-center text-white lg:py-32 lg:gap-0 gap-10"
-                >
-                    <img src="img/home-intellisense.svg" alt="" />
-                    <div>
-                        <h1 class="text-center font-bold text-3xl">
-                            Meet IntelliSense
-                        </h1>
-                        <h4 class="text-center font-normal text-xl">
-                            Go beyond syntax highlighting and autocomplete with
-                            IntelliSense.
-                        </h4>
+                    <div
+                        class="w-screen download-section -translate-y-0.5 place-items-center grid"
+                    >
+                        <div
+                            class="flex justify-around items-center w-screen py-20"
+                        >
+                            <div
+                                class="flex justify-center items-center flex-col gap-4"
+                            >
+                                <img
+                                    src="img/windows-174-svgrepo-com.svg"
+                                    class="w-56"
+                                    alt=""
+                                />
+                                <button
+                                    class="text-center hover:bg-blue-700 text-md font-semibold w-52 h-16 bg-blue-600 rounded-3xl transition-all"
+                                >
+                                    Download for Windows
+                                </button>
+                            </div>
+                            <div
+                                class="flex justify-center items-center flex-col gap-4"
+                            >
+                                <img
+                                    src="img/linux-svgrepo-com.svg"
+                                    class="w-56"
+                                    alt=""
+                                />
+                                <button
+                                    class="text-center hover:bg-blue-700 text-md font-semibold w-52 h-16 bg-blue-600 rounded-3xl transition-all"
+                                >
+                                    Download for Linux
+                                </button>
+                            </div>
+                            <div
+                                class="flex justify-center items-center flex-col gap-4"
+                            >
+                                <img
+                                    src="img/apple-173-svgrepo-com.svg"
+                                    class="w-56"
+                                    alt=""
+                                />
+                                <button
+                                    class="text-center hover:bg-blue-700 text-md font-semibold w-52 h-16 bg-blue-600 rounded-3xl transition-all"
+                                >
+                                    Download for MacOS
+                                </button>
+                            </div>
+                        </div>
+                        <footer
+                            class="relative bg-black w-screen translate-y-1 h-20 bottom-0 grid place-items-center"
+                        >
+                            <div class="flex">
+                                <img
+                                    src="img/microsoft-svgrepo-com (1).svg"
+                                    class="w-12"
+                                    alt=""
+                                />
+                                <div class="flex flex-col">
+                                    <h6 class="font-bold">Microsoft</h6>
+                                    <p class="opacity-75">©2030 Microsoft</p>
+                                </div>
+                            </div>
+                        </footer>
                     </div>
                 </div>
-            </div>
-            <div class="w-screen grid place-items-center absolute text-white opacity-0" id="home-azure-div">
-                <img src="img/home-azure.svg" alt="">
-                <h1 class="text-center font-bold text-3xl">
-                    Meet IntelliSense
-                </h1>
-                <h4 class="text-center font-normal text-xl">
-                    Go beyond syntax highlighting and autocomplete with
-                    IntelliSense.
-                </h4>
-            </div>
-            <div class="w-screen bg-blue-100 h-96 z-40 absolute">test</div>
             </section>
         </section>
     </body>
