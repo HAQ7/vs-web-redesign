@@ -187,6 +187,9 @@ path:nth-child(3) {
     .before-scroll-section {
         height: 10vh;
     }
+    #home-azure-div {
+        opacity: 1;
+    }
     :root {
         --imgWidth: 11/12;
     }

@@ -3,6 +3,7 @@ const screenHeight = document
     .querySelector(".fixed-section")
     .getClientRects()[0].height;
 const movingSection = document.querySelector(".moving-section");
+let homeAzure = document.getElementById("home-azure-div")
 let scrollPercentage;
 let ticking = false;
 let isEventActive;
