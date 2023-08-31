@@ -66,6 +66,5 @@ addEventListener("resize", () => {
             return;
         }
         movingSection.classList.add("moving-background");
-        homeAzure.style = `opacity: 1`;
     }
 });

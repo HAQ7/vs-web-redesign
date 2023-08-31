@@ -22,8 +22,24 @@ const addListenerIcons = () => {
     }
 };
 
-const setActiveElement = () => {
+const setNewActiveElement = () => {
     activeCarouselElementClass = carousel[activeCarouselNumber].classList;
+};
+
+const restProgressBar = () => {
+    progressBar.classList.remove("progress-bar");
+    setTimeout(() => {
+        progressBar.classList.add("progress-bar");
+        addListenerIcons();
+    }, 2000);
+};
+
+const getNewCarouselElement = () => {
+    setNewActiveElement();
+    activeCarouselElementClass.remove("back-card-shuffle");
+    activeCarouselElementClass.add("front-card-shuffle");
+    iconList[activeCarouselNumber].classList.add("bg-blue-600");
+    restProgressBar();
 };
 
 const removeListenerIcon = () => {
@@ -33,28 +49,24 @@ const removeListenerIcon = () => {
     }
 };
 
-const nextElementMove = (eventBtn = false, nextActiveNumber = undefined) => {
+const removeCurrentCarouselElement = () => {
     removeListenerIcon();
     iconList[activeCarouselNumber].classList.remove("bg-blue-600");
-    setActiveElement();
+    setNewActiveElement();
     activeCarouselElementClass.remove("front-card-shuffle");
     activeCarouselElementClass.add("back-card-shuffle");
+}
+
+const startCarouselTransition = (eventBtn = false, nextActiveNumber = undefined) => {
+    removeCurrentCarouselElement();
     if (eventBtn) {
         activeCarouselNumber = nextActiveNumber;
-    } else {
-        activeCarouselNumber =
-            activeCarouselNumber >= 3 ? 0 : activeCarouselNumber + 1;
+        getNewCarouselElement();
+        return;
     }
-    setActiveElement();
-
-    activeCarouselElementClass.remove("back-card-shuffle");
-    activeCarouselElementClass.add("front-card-shuffle");
-    iconList[activeCarouselNumber].classList.add("bg-blue-600");
-    progressBar.classList.remove("progress-bar");
-    setTimeout(() => {
-        progressBar.classList.add("progress-bar");
-        addListenerIcons();
-    }, 2000);
+    activeCarouselNumber =
+        activeCarouselNumber >= 3 ? 0 : activeCarouselNumber + 1;
+    getNewCarouselElement();
 };
 
 const startCarousel = () => {
@@ -77,9 +89,9 @@ const iconHandler = event => {
             icon === event.currentTarget &&
             indexOfIcon != activeCarouselNumber
         ) {
-            nextElementMove(true, indexOfIcon);
+            startCarouselTransition(true, indexOfIcon);
             clearInterval(carouselIntervel);
-            carouselIntervel = setInterval(nextElementMove, 7000);
+            carouselIntervel = setInterval(startCarouselTransition, 7000);
             break;
         }
         indexOfIcon++;
@@ -87,5 +99,5 @@ const iconHandler = event => {
 };
 
 addListenerIcons();
-carouselIntervel = setInterval(nextElementMove, 7000);
+carouselIntervel = setInterval(startCarouselTransition, 7000);
 setTimeout(startCarousel, 2000);
