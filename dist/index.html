@@ -15,7 +15,7 @@
             class="w-screen h-screen bg-black fixed transition-opacity opacity-0"
         ></section>
         <div
-            class="h-screen w-64 bg-zinc-800 right-0 fixed z-50 flex flex-col items-center pt-20 gap-10 text-center menu"
+            class="h-screen w-64 bg-zinc-800 right-0 fixed z-50 flex flex-col items-center pt-20 gap-10 text-center menu translate-x-[100%] transition-transform"
         >
             <div class="flex justify-start items-center py-2">
                 <img
@@ -110,11 +110,11 @@
                 </nav>
 
                 <div
-                    class="md:hidden w-10 h-10 text-white m-4 grid place-items-center fixed right-0 top-0 z-50 menuBtn"
+                    class="md:hidden w-10 h-10 text-white m-4 grid place-items-center fixed right-0 top-0 z-50 menuBtn "
                 >
-                    <div class="w-10 bg-white"></div>
-                    <div class="w-10 bg-white absolute"></div>
-                    <div class="w-10 bg-white absolute"></div>
+                    <div class="w-10 bg-white h-[2px] transition-all"></div>
+                    <div class="w-10 bg-white h-[2px]  transition-opacity absolute"></div>
+                    <div class="w-10 bg-white h-[2px] transition-all absolute"></div>
                 </div>
             </header>
             <section
@@ -154,7 +154,7 @@
                     </div>
                     <nav
                         id="iconList"
-                        class="md:w-10/12 w-full flex bg-zinc-800 sm:p-5 p-1 justify-between items-center text-center sm:text-sm text-xs font-medium shadow-md transition-all invisible opacity-0 z-30"
+                        class="md:w-10/12 w-full flex bg-zinc-800 sm:p-5 p-1 justify-between items-center text-center sm:text-sm text-xs font-medium shadow-md transition-all invisible opacity-0 z-30 rounded-[80px]"
                     >
                         <div
                             class="grid place-items-center rounded-full p-3 transition-colors cursor-default bg-blue-600"
@@ -230,7 +230,7 @@
                 </div>
             </section>
         </section>
-        <section class="before-scroll-section"></section>
+        <section class="before-scroll-section h-[40vh]"></section>
         <section class="scroll-section relative">
             <section
                 class="fixed-section grid place-items-center md:fixed top-0 z-10 h-screen w-screen"
@@ -240,7 +240,7 @@
                     id="scroll-rectangle"
                 >
                     <div
-                        class="md:w-1/4 relative bg-dark-4 move-down w-screen h-screen flex flex-col md:justify-between justify-center items-center text-white md:py-32 md:gap-0 gap-10"
+                        class="md:w-1/4 relative bg-dark-4 move-down1 w-screen h-screen flex flex-col md:justify-between justify-center items-center text-white md:py-32 md:gap-0 gap-10"
                     >
                         <div>
                             <h1 class="text-center font-bold text-3xl">
@@ -255,7 +255,7 @@
                         <img src="img/home-debug.svg" alt="" />
                     </div>
                     <div
-                        class="md:w-1/4 relative bg-dark-3 move-up w-screen h-screen flex flex-col md:justify-between justify-center items-center text-white md:py-32 md:gap-0 gap-10"
+                        class="md:w-1/4 relative bg-dark-3 move-up2 w-screen h-screen flex flex-col md:justify-between justify-center items-center text-white md:py-32 md:gap-0 gap-10"
                     >
                         <img src="img/home-git.svg" alt="" />
                         <div>
@@ -269,7 +269,7 @@
                         </div>
                     </div>
                     <div
-                        class="md:w-1/4 relative bg-dark-2 move-down w-screen h-screen flex flex-col md:justify-between justify-center items-center text-white md:py-32 md:gap-0 gap-10"
+                        class="md:w-1/4 relative bg-dark-2 move-down2 w-screen h-screen flex flex-col md:justify-between justify-center items-center text-white md:py-32 md:gap-0 gap-10"
                     >
                         <div>
                             <h1 class="text-center font-bold text-3xl mt-8">
@@ -283,7 +283,7 @@
                         <img src="img/Hundreds-of-Extensions.png" alt="" />
                     </div>
                     <div
-                        class="md:w-1/4 relative bg-dark-1 move-up w-screen h-screen flex flex-col md:justify-between justify-center items-center text-white md:py-32 md:gap-0 gap-10"
+                        class="md:w-1/4 relative bg-dark-1 move-up1 w-screen h-screen flex flex-col md:justify-between justify-center items-center text-white md:py-32 md:gap-0 gap-10"
                     >
                         <img src="img/home-intellisense.svg" alt="" />
                         <div>
@@ -349,7 +349,7 @@
                         </svg>
                     </div>
                     <div
-                        class="w-screen download-section -translate-y-0.5 place-items-center grid"
+                        class="w-screen bg-[#2b2b2b] -translate-y-0.5 place-items-center grid"
                     >
                         <div
                             class="flex justify-around items-center w-screen py-20"

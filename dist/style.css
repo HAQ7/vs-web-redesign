@@ -1,6 +1,7 @@
 :root {
     --imgWidth: 10/12;
     --screenWidth: 100vw;
+    --scrollPercentage: 0;
 }
 body {
     background-color: hsl(0, 0%, 8%);
@@ -27,13 +28,6 @@ h1 {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
-section nav {
-    border-radius: 80px;
-}
-.menuBtn > div {
-    transition: 0.5s;
-    height: 2px;
-}
 .menuBtn > div:first-child {
     transform: translateY(-10px);
 }
@@ -51,58 +45,59 @@ section nav {
     rotate: -45deg;
     transform: translateY(0);
 }
-.move-up {
-    transform: translateY(-100%);
-}
-.move-down {
-    transform: translateY(100%);
+
+.menuDrop {
+    transform: translate(0);
 }
 
-.bg-dark-1 {
-    background-color: hsl(0, 0%, 10%);
-}
-
-.bg-dark-2 {
-    background-color: hsl(0, 0%, 12%);
-}
-.bg-dark-3 {
-    background-color: hsl(0, 0%, 14%);
-}
-.bg-dark-4 {
-    background-color: hsl(0, 0%, 16%);
-}
-
-.before-scroll-section {
-    height: 40vh;
-}
-
-@media (max-width: 767px) {
-    .before-scroll-section {
-        height: 10vh;
-    }
-    :root {
-        --imgWidth: 11/12;
-    }
-}
 .scroll-section {
     height: 400vh;
 }
 
-.download-section {
-    background-color: hsl(0, 0%, 17%);
+.move-up1 {
+    background-color: hsl(0, 0%, 10%);
+    transform: translate(
+        min(calc(max(calc(var(--scrollPercentage) - 120), 0) * (3.33%)), 100%),
+        min(calc(-100% + max(var(--scrollPercentage), 0) * 2%), 0%)
+    );
 }
+.move-down1 {
+    background-color: hsl(0, 0%, 16%);
+    transform: translate(
+        max(
+            calc(max(calc(var(--scrollPercentage) - 120), 0) * (-3.33%)),
+            -100%
+        ),
+        max(calc(100% - max(var(--scrollPercentage), 0) * 2%), 0%)
+    );
+}
+.move-up2 {
+    background-color: hsl(0, 0%, 14%);
 
+    transform: translate(
+        max(
+            calc(max(calc(var(--scrollPercentage) - 120), 0) * (-6.67%)),
+            -200%
+        ),
+        min(calc(-100% + max(calc(var(--scrollPercentage) - 50), 0) * 2%), 0%)
+    );
+}
+.move-down2 {
+    background-color: hsl(0, 0%, 12%);
+
+    transform: translate(
+        min(calc(max(calc(var(--scrollPercentage) - 120), 0) * (6.67%)), 200%),
+        max(calc(100% - max(calc(var(--scrollPercentage) - 50), 0) * 2%), 0%)
+    );
+}
 .download-section-wrap {
-    transform: translateY(100%);
+    transform: translateY(
+        max(calc(100% - max(calc(var(--scrollPercentage) - 150), 0) * 2%), 0%)
+    );
 }
 
-.menu {
-    transform: translate(100%);
-    transition: 0.5s;
-}
-
-.menuDrop {
-    transform: translate(0);
+#home-azure-div {
+    opacity: min(calc(var(--scrollPercentage) - 90), 1);
 }
 
 .moving-background {
@@ -165,7 +160,46 @@ section nav {
 .custom-shape-divider-bottom-1692806008 .shape-fill {
     fill: hsl(0, 0%, 17%);
 }
+path:nth-child(1) {
+    transform: translateX(
+        calc(max(calc(var(--scrollPercentage) - 150), 0) * (-2%))
+    );
+}
+path:nth-child(2) {
+    transform: translateX(
+        calc(max(calc(var(--scrollPercentage) - 150), 0) * (-1.5%))
+    );
+}
+path:nth-child(3) {
+    transform: translateX(
+        calc(max(calc(var(--scrollPercentage) - 150), 0) * (-1%))
+    );
+}
 /* animations -------------------------------------------------------- */
+
+@media (min-width: 1024px) {
+    :root {
+        --imgWidth: 10/12;
+    }
+}
+
+@media (max-width: 767px) {
+    .before-scroll-section {
+        height: 10vh;
+    }
+    :root {
+        --imgWidth: 11/12;
+    }
+}
+
+@media (hover: hover) {
+    .iconHover {
+        cursor: pointer;
+    }
+    .iconHover:hover {
+        background-color: #52525b;
+    }
+}
 
 @keyframes background-move {
     from {
@@ -189,22 +223,8 @@ section nav {
     }
 }
 
-@media (min-width: 1024px) {
-    :root {
-        --imgWidth: 10/12;
-    }
-}
 .transition-mid {
     transition: 0.75s;
-}
-
-@media (hover: hover) {
-    .iconHover {
-        cursor: pointer;
-    }
-    .iconHover:hover {
-        background-color: #52525b;
-    }
 }
 
 .pop-left1 {
